@@ -1,14 +1,13 @@
 package com.codility;
 
 
+import java.util.Arrays;
+
 public class TapeEquilibrium {
     public int solution(int[] A) {
 
         long firstSum = A[0];
-        long secondSum = 0;
-
-        for (int i =1;i<A.length;i++)
-            secondSum += A[i];
+        long secondSum = Arrays.stream(A).sum() - firstSum;
 
         long minDifferenceBetweenSums = Math.abs(Math.abs(secondSum)+Math.abs(firstSum));
 
