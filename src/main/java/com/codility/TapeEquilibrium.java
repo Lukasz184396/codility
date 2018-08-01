@@ -13,8 +13,8 @@ public class TapeEquilibrium {
 
         for (int indexOfSeparation=1; indexOfSeparation<A.length; indexOfSeparation++)
         {
-            if ( Math.abs(Math.abs(firstSum) - Math.abs(secondSum)) < minDifferenceBetweenSums )
-                minDifferenceBetweenSums = Math.abs( Math.abs(firstSum) - Math.abs(secondSum) );
+            if ( Math.abs(firstSum - secondSum) < minDifferenceBetweenSums )
+                minDifferenceBetweenSums = Math.abs( firstSum - secondSum );
             firstSum += A[indexOfSeparation];
             secondSum -=A[indexOfSeparation];
         }
