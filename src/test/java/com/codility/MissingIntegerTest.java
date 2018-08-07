@@ -23,6 +23,6 @@ public class MissingIntegerTest {
     @Test
     public void shouldReturnTwo() {
         int [] array = {1,1,1,1};
-        assertEquals(1, new MissingInteger().solution(array));
+        assertEquals(2, new MissingInteger().solution(array));
     }
 }
