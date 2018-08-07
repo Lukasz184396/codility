@@ -1,7 +1,16 @@
 package com.codility;
 
+import java.util.Arrays;
+
 public class MissingInteger {
     public int solution(int[] array) {
-        return 0;
+        int smallestIntegerNotOccuringInArray = 1;
+        Arrays.sort(array);
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] > smallestIntegerNotOccuringInArray) {
+                smallestIntegerNotOccuringInArray++;
+            }
+        }
+        return smallestIntegerNotOccuringInArray;
     }
 }
