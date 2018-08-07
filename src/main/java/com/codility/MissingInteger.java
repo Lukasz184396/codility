@@ -7,8 +7,7 @@ public class MissingInteger {
         int smallestIntegerNotOccuringInArray = 1;
         Arrays.sort(array);
         for (int i = 0; i < array.length; i++) {
-            if(array[i] < smallestIntegerNotOccuringInArray);
-                else if(array[i] == smallestIntegerNotOccuringInArray) {
+            if(array[i] == smallestIntegerNotOccuringInArray) {
                 smallestIntegerNotOccuringInArray++;
             }
         }
