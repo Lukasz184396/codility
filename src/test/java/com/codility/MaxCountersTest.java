@@ -16,7 +16,13 @@ public class MaxCountersTest {
         A[5] = 4;
         A[6] = 4;
         int [] result = {3, 2, 2, 4, 2};
-        assertEquals(result,new MaxCounters().solution(5, A));
+        int [] actual = new MaxCounters().solution(5, A);
+        assertEquals(result[0],actual[0]);
+        assertEquals(result[1],actual[1]);
+        assertEquals(result[2],actual[2]);
+        assertEquals(result[3],actual[3]);
+        assertEquals(result[4],actual[4]);
+
     }
 
 }
