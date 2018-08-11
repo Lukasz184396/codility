@@ -16,4 +16,14 @@ public class PassingCarsTest {
 //        A[4] = 1;
         assertEquals(5,new PassingCars().solution(A));
     }
+    @Test
+    public void shouldReturnZeroIfIsOnlyOneElementInArray (){
+        int [] A = {0};
+//        A[0] = 0;
+//        A[1] = 1;
+//        A[2] = 0;
+//        A[3] = 1;
+//        A[4] = 1;
+        assertEquals(0,new PassingCars().solution(A));
+    }
 }
