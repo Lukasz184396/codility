@@ -1,11 +1,7 @@
 package com.codility;
 
 public class CountDiv {
-    public int solution(int A, int B, int K) {
-        int counter = 0;
-        for (int i = A; i < B; i++) {
-            if(i % K == 0) counter++;
-        }
-        return counter;
+    public int solution(int A, int B, int K)  {
+        return (B / K) - (A / K) + (A % K == 0 ? 1 : 0);
     }
 }
