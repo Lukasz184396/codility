@@ -16,4 +16,20 @@ public class NumberOfDiscIntersectionsTest {
         int[] A = {1,5,2,1,4,0};
         assertEquals(11, new NumberOfDiscIntersections().solution(A));
     }
+
+    //this test does not pass -it is mistake on codility?
+    @Test
+    public void testToPointMistakeOnCodility(){
+        int[] A = {1,5};
+        assertEquals(0, new NumberOfDiscIntersections().solution(A));
+    }
+
+    //probably good solution is solution2 method
+    @Test
+    public void testToPointMistakeOnCodilityWithPossibleGoodSolution(){
+        int[] A = {1,5};
+        assertEquals(0, new NumberOfDiscIntersections().solution2(A));
+    }
+
+
 }
