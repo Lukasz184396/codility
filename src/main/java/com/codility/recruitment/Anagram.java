@@ -1,13 +1,15 @@
 package com.codility.recruitment;
 
+import com.google.common.base.Strings;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class Anagram {
 
     public boolean areWordsAnagrams(String givenWord, String checkedWord) {
-        if (isAnyWordNull(givenWord, checkedWord) ||
-                isAnyWordEmptyString(givenWord, checkedWord) ||
+        if (Strings.isNullOrEmpty(givenWord) ||
+                Strings.isNullOrEmpty(checkedWord) ||
                 isDifferentLengthOfWords(givenWord, checkedWord)) {
             return false;
         }
@@ -23,14 +25,6 @@ public class Anagram {
 
     private boolean isDifferentLengthOfWords(String givenWord, String checkedWord) {
         return givenWord.length() != checkedWord.length();
-    }
-
-    private boolean isAnyWordEmptyString(String givenWord, String checkedWord) {
-        return givenWord.equals("") || checkedWord.equals("");
-    }
-
-    private boolean isAnyWordNull(String givenWord, String checkedWord) {
-        return givenWord == null || checkedWord == null;
     }
 
     private void countCharsOccurrencesInString(String givenWord, Map<Character, Integer> wordCountedCharacters) {
