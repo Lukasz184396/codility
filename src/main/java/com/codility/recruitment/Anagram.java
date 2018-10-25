@@ -12,12 +12,12 @@ public class Anagram {
             return false;
         }
 
-        Map<Character, Integer> givenWordCountedCharacters = new HashMap();
-        Map<Character, Integer> checkedWordCountedCharacters = new HashMap();
-        countCharsInString(givenWord, givenWordCountedCharacters);
-        countCharsInString(checkedWord, checkedWordCountedCharacters);
+        Map<Character, Integer> givenWordCountedOccurrencesOfCharacters = new HashMap();
+        Map<Character, Integer> checkedWordCountedOccurrencesOfCharacters = new HashMap();
+        countCharsInString(givenWord, givenWordCountedOccurrencesOfCharacters);
+        countCharsInString(checkedWord, checkedWordCountedOccurrencesOfCharacters);
 
-        if (givenWordCountedCharacters.equals(checkedWordCountedCharacters)) return true;
+        if (givenWordCountedOccurrencesOfCharacters.equals(checkedWordCountedOccurrencesOfCharacters)) return true;
         else return false;
     }
 
