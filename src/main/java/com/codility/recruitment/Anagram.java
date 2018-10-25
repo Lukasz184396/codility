@@ -5,21 +5,37 @@ import java.util.Map;
 
 public class Anagram {
 
-    public boolean isWordAnagram(String givenWord, String checkedWord) {
-        if(givenWord == null || givenWord.equals("") || givenWord.length() != checkedWord.length()) return false;
+    public boolean areWordsAnagrams(String givenWord, String checkedWord) {
+        if (isAnyWordNull(givenWord, checkedWord) ||
+                isAnyWordEmptyString(givenWord, checkedWord) ||
+                isDifferentLengthOfWords(givenWord, checkedWord)) {
+            return false;
+        }
 
         Map<Character, Integer> givenWordCountedCharacters = new HashMap();
         Map<Character, Integer> checkedWordCountedCharacters = new HashMap();
         countCharsInString(givenWord, givenWordCountedCharacters);
-        countCharsInString(checkedWord, checkedWordCountedCharacters );
+        countCharsInString(checkedWord, checkedWordCountedCharacters);
 
-        if(givenWordCountedCharacters.equals(checkedWordCountedCharacters)) return true;
+        if (givenWordCountedCharacters.equals(checkedWordCountedCharacters)) return true;
         else return false;
+    }
+
+    private boolean isDifferentLengthOfWords(String givenWord, String checkedWord) {
+        return givenWord.length() != checkedWord.length();
+    }
+
+    private boolean isAnyWordEmptyString(String givenWord, String checkedWord) {
+        return givenWord.equals("") || checkedWord.equals("");
+    }
+
+    private boolean isAnyWordNull(String givenWord, String checkedWord) {
+        return givenWord == null || checkedWord == null;
     }
 
     private void countCharsInString(String givenWord, Map<Character, Integer> wordCountedCharacters) {
         for (int i = 0; i < givenWord.length(); i++) {
-            if(wordCountedCharacters.containsKey(Character.valueOf(givenWord.charAt(i)))) {
+            if (wordCountedCharacters.containsKey(Character.valueOf(givenWord.charAt(i)))) {
                 Integer specificCharCounter =
                         wordCountedCharacters.get(Character.valueOf(givenWord.charAt(i))) + 1;
                 wordCountedCharacters.put(Character.valueOf(givenWord.charAt(i)),
