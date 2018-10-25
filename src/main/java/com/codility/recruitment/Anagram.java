@@ -14,8 +14,8 @@ public class Anagram {
 
         Map<Character, Integer> givenWordCountedOccurrencesOfCharacters = new HashMap();
         Map<Character, Integer> checkedWordCountedOccurrencesOfCharacters = new HashMap();
-        countCharsInString(givenWord, givenWordCountedOccurrencesOfCharacters);
-        countCharsInString(checkedWord, checkedWordCountedOccurrencesOfCharacters);
+        countCharsOccurrencesInString(givenWord, givenWordCountedOccurrencesOfCharacters);
+        countCharsOccurrencesInString(checkedWord, checkedWordCountedOccurrencesOfCharacters);
 
         if (givenWordCountedOccurrencesOfCharacters.equals(checkedWordCountedOccurrencesOfCharacters)) return true;
         else return false;
@@ -33,7 +33,7 @@ public class Anagram {
         return givenWord == null || checkedWord == null;
     }
 
-    private void countCharsInString(String givenWord, Map<Character, Integer> wordCountedCharacters) {
+    private void countCharsOccurrencesInString(String givenWord, Map<Character, Integer> wordCountedCharacters) {
         for (int i = 0; i < givenWord.length(); i++) {
             if (wordCountedCharacters.containsKey(Character.valueOf(givenWord.charAt(i)))) {
                 Integer specificCharCounter =
