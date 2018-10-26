@@ -27,4 +27,8 @@ public class AnagramTest {
     public void shouldReturnFalseIfIsDifferentLengthOfWords () {
         assertFalse("Two phrases are not anagrams each other",new Anagram().areWordsAnagrams("maria", "mariaa"));
     }
+    @Test
+    public void shouldReturnFalseIfIsSameLengthOfWordsAndAreNotAnagram () {
+        assertFalse("Two phrases are not anagrams each other",new Anagram().areWordsAnagrams("maria", "marii"));
+    }
 }
