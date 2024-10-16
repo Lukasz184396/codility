@@ -1,6 +1,6 @@
 package com.codility.recruitment;
 
-public class Tmp {
+public class ReferenceValueExample {
     public static void main(String[] args) {
         X myObject = new X();
         foo(myObject);
@@ -9,7 +9,7 @@ public class Tmp {
     }
 
     public static void foo(X instance) {
-        instance.setA(5);
+        instance.setA(1);
         instance.setB(2);
         instance = new X();
         instance.setA(3);
